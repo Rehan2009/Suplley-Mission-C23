@@ -79,7 +79,7 @@ function draw() {
   //packageBody.position.y = packageSprite.y;
 	
    if (keyCode === DOWN_ARROW) {
-	Matter.Body.isStatic(packageBody,false);
+	Matter.Body.setStatic(packageBody,false);
 		
 	} 
 	

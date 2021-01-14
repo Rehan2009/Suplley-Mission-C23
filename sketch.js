@@ -79,11 +79,11 @@ function draw() {
   //packageBody.position.y = packageSprite.y;
 	
    if (keyCode === DOWN_ARROW) {
-	Matter.Body.setStatic(packageBody,false);
+	Matter.Body.isStatic(packageBody,false);
 		
 	} 
 	
-  //packageSprite.velocityX = 4;
+  packageSprite.velocityX = 4;
   helicopterSprite.velocityX = 4;
         
   if(helicopterSprite.x > 700){

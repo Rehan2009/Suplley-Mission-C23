@@ -32,7 +32,7 @@ function setup() {
 	engine = Engine.create();
 	world = engine.world;
 
-	packageBody = Bodies.circle(width/2 , 220 , 5 , {restitution:0.4, isStatic:true});
+	packageBody = Bodies.circle(width/2 , 180 , 5 , {restitution:0.4, isStatic:true});
 	World.add(world, packageBody);
 	
 
@@ -74,6 +74,7 @@ function draw() {
  
   //packageSprite.x= packageBody.position.x 
   //packageSprite.y= packageBody.position.y 
+	
   packageBody.position.x = packageSprite.x;
   packageBody.position.y = packageSprite.y;
 	
@@ -88,6 +89,7 @@ function draw() {
   if(helicopterSprite.x > 700){
    //helicopterSprite.velocityX = -4;
    //packageSprite.velocityX = -4;
+	  
    helicopterSprite.x = 100;
    packageSprite.x = 100;	  
    

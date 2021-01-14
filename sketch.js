@@ -63,7 +63,7 @@ function setup() {
 	 World.add(world, boxRightBody);
 
 
-	//Engine.run(engine);
+	Engine.run(engine);
   
 }
 

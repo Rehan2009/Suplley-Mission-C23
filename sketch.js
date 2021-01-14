@@ -15,10 +15,7 @@ function setup() {
 	createCanvas(700, 700);
 	rectMode(CENTER);
 	
-       object_options-{
-        restitution:0.4,
-	isStatic:true
-	}
+       
 	
 	packageSprite=createSprite(width/2, 80, 10,10);
 	packageSprite.addImage(packageIMG)
@@ -34,7 +31,12 @@ function setup() {
 
 	engine = Engine.create();
 	world = engine.world;
-
+	
+        object_options-{
+        restitution:0.4,
+	isStatic:true
+	}
+	
 	packageBody = Bodies.circle(width/2 , 200 , 5 , object_options);
 	World.add(world, packageBody);
 	
@@ -86,19 +88,12 @@ function draw() {
   rectMode(CENTER);
   background(0);
 	
-keypressed(); 
 	
   packageSprite.x= packageBody.position.x 
  
   packageSprite.y= packageBody.position.y 
 
-  
-  
-  drawSprites();
-  }
-
-  function Keypressed(){
-	if (keyCode === DOWN_ARROW) {
+  if (keyCode === DOWN_ARROW) {
 		
        object_options-{
         restitution:0.1 ,
@@ -106,4 +101,8 @@ keypressed();
 	}
 		
 	  }
+  
+  drawSprites();
   }
+
+ 

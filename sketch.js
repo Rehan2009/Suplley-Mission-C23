@@ -76,12 +76,12 @@ function draw() {
   packageSprite.y= packageBody.position.y 
 	
    if (keyCode === DOWN_ARROW) {
-Matter.Body.setStatic(packageBody,false);
+	Matter.Body.setStatic(packageBody,false);
 		
 } 
 	
   packageSprite.velocityX = 4;
-  helicopterSprite.velocityX = 4;
+  helicopterSprite.velocityX = 1;
         
   if(helicopterSprite.x > 700){
    helicopterSprite.velocityX = -4;

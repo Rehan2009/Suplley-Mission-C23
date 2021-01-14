@@ -1,5 +1,6 @@
 var helicopterIMG, helicopterSprite, packageSprite,packageIMG;
-var packageBody,ground
+var packageBody,ground;
+var engine, world;
 const Engine = Matter.Engine;
 const World = Matter.World;
 const Bodies = Matter.Bodies;
@@ -25,7 +26,7 @@ function setup() {
 	helicopterSprite.scale=0.6
 
 	groundSprite=createSprite(width/2, height-35, width,10);
-	groundSprite.shapeColor=color(255)
+	groundSprite.shapeColor=color(255);
 
 
 	engine = Engine.create();
@@ -82,12 +83,12 @@ Matter.Body.setStatic(packageBody,false);
   packageSprite.velocityX = 4;
   helicopterSprite.velocityX = 4;
         
-  if(helicopterSprite.x === 700){
+  if(helicopterSprite.x > 700){
    helicopterSprite.velocityX = -4;
-   packageSprite.velocityX = 4;
+   packageSprite.velocityX = -4;
   }
    
-   if(helicopterSprite.x === 0){
+   if(helicopterSprite.x < 100){
    packageSprite.velocityX = 4;
   helicopterSprite.velocityX = 4;
    }

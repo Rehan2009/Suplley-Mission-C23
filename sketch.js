@@ -87,8 +87,10 @@ function draw() {
         
   if(helicopterSprite.x > 700){
    //helicopterSprite.velocityX = -4;
+   //packageSprite.velocityX = -4;
    helicopterSprite.x = 100;
-   packageSprite.velocityX = -4;
+   packageSprite.x = 100;	  
+   
   }
    
    if(helicopterSprite.x < 100){

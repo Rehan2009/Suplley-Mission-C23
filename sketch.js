@@ -12,10 +12,14 @@ function preload()
 }
 
 function setup() {
-	createCanvas(800, 700);
+	createCanvas(700, 700);
 	rectMode(CENTER);
 	
-
+       object_options-{
+        restitution:0.4,
+	isStatic:true
+	}
+	
 	packageSprite=createSprite(width/2, 80, 10,10);
 	packageSprite.addImage(packageIMG)
 	packageSprite.scale=0.2
@@ -31,7 +35,7 @@ function setup() {
 	engine = Engine.create();
 	world = engine.world;
 
-	packageBody = Bodies.circle(width/2 , 200 , 5 , {restitution:0.4, isStatic:true});
+	packageBody = Bodies.circle(width/2 , 200 , 5 , object_options);
 	World.add(world, packageBody);
 	
 
@@ -62,16 +66,16 @@ function setup() {
 	 World.add(world, boxRightBody);
 	 
 	helicopterSprite.x = 0;
+	 packageSprite.velocityX = 4;
 	helicopterSprite.velocityX = 4;
 	
-	if(helicopterSprite.x > 800){
+	if(helicopterSprite.x > 700){
 	helicopterSprite.velocityX = -4;
+	packageSprite.velocityX = -4;
 	}
 	
-	if(helicopterSprite.x < 0){
-	helicopterSprite.velocityX = 4;
-	}
-    
+	 
+	
 
 	Engine.run(engine);
   
@@ -81,19 +85,25 @@ function setup() {
 function draw() {
   rectMode(CENTER);
   background(0);
- 
+	
+keypressed(); 
+	
   packageSprite.x= packageBody.position.x 
+ 
   packageSprite.y= packageBody.position.y 
 
   
-
   
   drawSprites();
   }
 
   function Keypressed(){
 	if (keyCode === DOWN_ARROW) {
-		Matter.Body.setStatic(packageBody,false);
+		
+       object_options-{
+        restitution:0.1 ,
+	isStatic:false
+	}
 		
 	  }
   }

@@ -61,6 +61,8 @@ function setup() {
  	boxRightBody = Bodies.rectangle(boxPosition+200-20 , boxY, 20,100 , {isStatic:true} );
 	 World.add(world, boxRightBody);
 	 
+	helicopterSprite.x = 40;
+	
     if(helicopterSprite.x<50){
 	 helicopterSprite.velocityX = 4;
 	}

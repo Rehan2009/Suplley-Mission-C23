@@ -65,7 +65,11 @@ function setup() {
 	helicopterSprite.velocityX = 4;
 	
 	if(helicopterSprite.x > 800){
-	helicopterSprite.x = 0;
+	helicopterSprite.velocityX = -4;
+	}
+	
+	if(helicopterSprite.x < 0){
+	helicopterSprite.velocityX = 4;
 	}
     
 
